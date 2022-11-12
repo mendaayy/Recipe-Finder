@@ -1,38 +1,66 @@
 const form = document.querySelector("form");
 const recipeBox = document.querySelector(".recipeBox");
-const container = document.querySelector(".container");
 
-//edamam account info
+//edamam API account info
 const id = "be1d0e5f";
 const key = "8a59033a24964f5cffe45fb6c93ce6e8";
 
+/**
+ * [searched item]
+ * @type {String} search
+ */
 let search = "";
+
+/**
+ * Listen to submit event
+ *
+ * @type {element} - the target of the event
+ * @listens document#submit - the namespace and name of the event
+ */
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   search = event.target.querySelector("input").value;
   
+  /**
+   * This fetch method is used to request data/recipes from the api database Edamam
+   *  
+   * @param  {string} the URL to which the request is to be made
+   * @return {object} returns a JSON promise if succeeds
+   */
+  
   fetch(`https://api.edamam.com/search?q=${search}&app_id=${id}&app_key=${key}&from=0&to=20`)
   .then(function (response) {
-      return response.json();
+      // parse the response as JSON
+      return response.json(); 
   })
   .then(function (data) {
+    // there are results from the JSON response, so display the items/data
     if (data.count != 0) {
       display(data.hits);
       console.log(data);
     } else {
-      noDisplay();
+    // no results, then call function
+      noResults();
     }
   })
+  // error handling
   .catch(function (err) {
       console.log('error: ' + err);
   });
-  
 });
+
+/**
+ *  This function upload/display the search results
+ *  
+ * @param  {object} results - the JSON response/results
+ * @return {object} the display of the response
+ */
 
 function display(results) {
   let display = "";
 
+  // returns array when done iterating over the results
   results.map((result) => {
     display += `
       <div class="recipe">
@@ -63,10 +91,14 @@ function display(results) {
     `
   });
   
+  // display the result of mapping 
   recipeBox.innerHTML = display;
 }
 
-function noDisplay() {
+/**
+ * @return {element} - returns the element that has the ID attribute "input"
+ */
+function noResults() {
   document.getElementById("input").value = "";
   document.getElementById("input").placeholder = "No recipes found";
   document.getElementById("input").style.setProperty("--change", "#cd1b1b");

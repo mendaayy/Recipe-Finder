@@ -6,13 +6,18 @@
   font-size: 12px;
 }
 
+/* Backgrounf */
 section {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  background-color: rgb(256,256,256);
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .container {
@@ -23,48 +28,58 @@ section {
   height: 100%;
 }
 
+.container form {
+  max-width: 600px;
+}
+
+/* Title */
 .container a {
   text-decoration: none;
 }
 
 h1 {
-  color: rgb(65, 177, 39);
+  color:  rgb(65, 177, 39);
   text-align: center;
   font-size: 6rem;
   margin-bottom: 50px;
   outline: none;
+  letter-spacing: 1px;
 }
 
+/* Search */
 form {
   width: 100%;
   margin: 20px auto;
   background-color: rgb(231, 231, 231);
-  border-radius: 20px;
+  border-radius: 40px;
 }
 
 input {
-  padding: 20px;
+  padding: 15px;
   width: 90%;
-  margin-left: 5px;
-  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: -10px;
+  border-radius: 40px;
   background-color: rgb(231, 231, 231);
   border: none;
   outline: none;
   font-size: 2rem;
   display: inline-block;
-  color: rgb(102, 102, 102);
+  color: rgb(50 50 50);
 }
 
 input::placeholder {
-  color: var(--change)
+  color: var(--change);
+  color: rgb(127 127 127);
 }
 
+/* Search Icon*/
 form button {
   padding: 7px;
   padding-top: -20px;
   margin-top: -20px;
   display: inline-block;
-  width: 8%;
+  width: 1%;
   color: rgb(53, 147, 30);
   background-color: rgb(231, 231, 231);
   border: none;
@@ -72,8 +87,9 @@ form button {
   border-radius: 20px;
 }
 
+/* Recipes Section*/
 .recipeBox{
-  margin-top: 50px;
+  margin-top: 100px;
   grid-gap: 20px;
   width: 100%;
   display: grid;
@@ -81,12 +97,14 @@ form button {
   grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
 }
 
+/* JSON data/Recipe container/Box*/
 .recipe {
+  background-color: rgba(0,0,0,0.3);
   width: 100%;
   border-radius: 10px;
-  background-color: rgb(242, 242, 242);
   padding: 20px;
   overflow: hidden;
+  border: 1px solid #232222;
 }
 
 .recipe a {
@@ -94,9 +112,10 @@ form button {
 }
 
 .recipe img {
-  width: 100%;
+  width: 120%;
   height: 300px;
-  border-radius: 10px;
+  margin-left: -40px;
+  margin-top: -40px;
 }
 
 .flex-container {
@@ -132,17 +151,19 @@ form button {
   left: 50%;
 }
 
+/* Recipes Calories*/
 .col:first-child {
   text-align: center;
 }
 
 .col .cal {
-  color: black;
+  color: white;
   font-size: 1.7rem;
   display: inline-block;
   font-weight: bold;
 }
 
+/* Recipes Nutritions*/
 .col ul {
   list-style: none;
   line-height: 20px;
@@ -150,7 +171,7 @@ form button {
 
 .col li {
   display: list-item;
-  color: black;
+  color: white;
   font-size: 14px;
 }
 
@@ -171,29 +192,23 @@ form button {
 }
 
 .col li.fat::before {
-  color:  orange
+  color:  orange;
 }
 
 .col li.carb::before {
   color: red;
 }
 
-.container form {
-  max-width: 800px;
-}
-
+/* Responsiveness*/
 @media (max-width: 768px) {
   .recipeBox{
     grid-gap: 10px;
   }
   h1 {
-    font-size: 4rem;
-  }
-  form {
-    max-width: 450px;
+    font-size: 5rem;
   }
   form input {
-    padding: 10px;
-    font-size: 2rem;
+    padding: 14px;  
+    margin-right: -10px;
   }
 }
