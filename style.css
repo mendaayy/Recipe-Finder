@@ -6,7 +6,7 @@
   font-size: 12px;
 }
 
-/* Backgrounf */
+/* Background */
 section {
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@ h2 {
   letter-spacing: 1px;
 }
 
-/* Search */
+/* Search bar */
 form {
   width: 100%;
   margin: 20px auto;
@@ -123,7 +123,7 @@ form button {
   padding-top: -20px;
   margin-top: -20px;
   display: inline-block;
-  width: 1%;
+  width: 8%;
   color: rgb(53, 147, 30);
   background-color: rgb(231, 231, 231);
   border: none;
