@@ -40,30 +40,55 @@ form.addEventListener("submit", (event) => {
       recipeBox.innerHTML = getRecipes(data.hits);
       console.log(data);
 
+      const filterAll = document.querySelector("#filter-all");
+      const filterBreakfast = document.querySelector("#filter-breakfast");
+      const filterLunchDinner = document.querySelector("#filter-lunchDinner");
+      const filterSnack = document.querySelector("#filter-snack");
+
+
       // show filter buttons
       filterButtons.style.display = "block";
+      filterAll.classList.remove("filterBtn");
+      filterAll.classList.add("active");
+      filterBreakfast.classList.add("filterBtn");
+      filterLunchDinner.classList.add("filterBtn");
+      filterSnack.classList.add("filterBtn");
 
-      const filterAll = document.querySelector("#filterAll");
-      const filterBreakfast = document.querySelector("#filterBreakfast");
-      const filterLunchDinner = document.querySelector("#filterLunchDinner");
-      const filterSnack = document.querySelector("#filterSnack");
-
-      // buttons = clicked -> call functions
+      // buttons = clicked -> call functions and  add/remove class
       filterAll.addEventListener('click', (event) => {
         recipeBox.innerHTML = getRecipes(data.hits);
+        filterAll.classList.remove("filterBtn");
+        filterAll.classList.add("active");
+        filterBreakfast.classList.add("filterBtn");
+        filterLunchDinner.classList.add("filterBtn");
+        filterSnack.classList.add("filterBtn");
       });
 
       filterBreakfast.addEventListener('click', (event) => {
         recipeBox.innerHTML = filter(data.hits, 'breakfast');
-        console.log(Object.keys(data.hits).length);
+        filterBreakfast.classList.remove("filterBtn");
+        filterBreakfast.classList.add("active");
+        filterAll.classList.add("filterBtn");
+        filterLunchDinner.classList.add("filterBtn");
+        filterSnack.classList.add("filterBtn");
       });
 
       filterLunchDinner.addEventListener('click', (event) => {
         recipeBox.innerHTML = filter(data.hits, 'lunch/dinner');
+        filterLunchDinner.classList.remove("filterBtn");
+        filterLunchDinner.classList.add("active");
+        filterBreakfast.classList.add("filterBtn");
+        filterAll.classList.add("filterBtn");
+        filterSnack.classList.add("filterBtn");
       });
 
       filterSnack.addEventListener('click', (event) => {
         recipeBox.innerHTML = filter(data.hits, 'snack');
+        filterSnack.classList.remove("filterBtn");
+        filterSnack.classList.add("active");
+        filterBreakfast.classList.add("filterBtn");
+        filterLunchDinner.classList.add("filterBtn");
+        filterAll.classList.add("filterBtn");
       });
 
     } else {
@@ -164,6 +189,7 @@ function filter(results, mealtype) {
 
   let display = "";
 
+  // if array is empty
   if (!recipes.length){
     display +=
     `
@@ -175,17 +201,19 @@ function filter(results, mealtype) {
   return recipes;
 }
 
+
+searchBar.style.setProperty("--change", "rgb(127 127 127)");
+
 /**
  * This function changes the input's placeholder and color when there's no result
  * 
  * @return {element} - returns the element that has the ID attribute "input"
  */
 
-searchBar.style.setProperty("--change", "rgb(127 127 127)");
-
 function noRecipes() {
   searchBar.value = "";
   searchBar.placeholder = "No recipes found";
   searchBar.style.setProperty("--change", "#cd1b1b");
 };
+
 
