@@ -39,8 +39,9 @@ form.addEventListener("submit", (event) => {
     if (data.count != 0) {
 
       recipeBox.innerHTML = getRecipes(data.hits);
+      console.log(data.hits.length)
 
-      console.log(data);
+      //console.log(data);
 
       let filterBtn = filterButtons.getElementsByClassName("filterBtn");
       const filterAll = document.querySelector("#filter-all");
@@ -62,8 +63,9 @@ form.addEventListener("submit", (event) => {
         });
       }
 
+      // buttons = clicked -> call functions
       filterAll.addEventListener('click', (event) => {
-        recipeBox.innerHTML = filter(data.hits);
+        recipeBox.innerHTML = getRecipes(data.hits);
       });
 
       filterBreakfast.addEventListener('click', (event) => {
@@ -144,6 +146,7 @@ const getRecipes = (results) => {
 */
 
 function filter(results, mealtype) {
+  console.log(mealtype)
   const recipes = results
   .filter(result => result.recipe.mealType.includes(mealtype))
   // iterate over the results
@@ -179,6 +182,7 @@ function filter(results, mealtype) {
 
   let display = "";
 
+  //console.log(recipes.length)
   // if array is empty
   if (!recipes.length){
     display +=
