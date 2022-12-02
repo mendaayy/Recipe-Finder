@@ -70,14 +70,7 @@ h1 {
 }
 
 /* when filter button is clicked */
-.active {
-  padding: 0.6em 1.6em;
-  color: white;
-  cursor: pointer;
-  border-radius: 2em;
-  border: 2px solid #41b127;
-  font-size: 1.2em;
-  margin-right: 1em;
+.filterBtn.active {
   background-color: #41b127;
 }
 

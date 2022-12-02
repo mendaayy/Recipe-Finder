@@ -37,45 +37,58 @@ form.addEventListener("submit", (event) => {
   .then((data) => {
     // well results from the JSON response -> display the items/data
     if (data.count != 0) {
-
       recipeBox.innerHTML = getRecipes(data.hits);
-
       console.log(data);
 
-      let filterBtn = filterButtons.getElementsByClassName("filterBtn");
       const filterAll = document.querySelector("#filter-all");
       const filterBreakfast = document.querySelector("#filter-breakfast");
       const filterLunchDinner = document.querySelector("#filter-lunchDinner");
       const filterSnack = document.querySelector("#filter-snack");
 
+
       // show filter buttons
       filterButtons.style.display = "block";
+      filterAll.classList.remove("filterBtn");
+      filterAll.classList.add("active");
+      filterBreakfast.classList.add("filterBtn");
+      filterLunchDinner.classList.add("filterBtn");
+      filterSnack.classList.add("filterBtn");
 
-
-      // add active class to the current filter button 
-      for (let i = 0; i < filterBtn.length; i++) {
-        filterBtn[i].addEventListener("click", function() {
-
-          let current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active"; 
-        });
-      }
-
+      // buttons = clicked -> call functions and  add/remove class
       filterAll.addEventListener('click', (event) => {
-        recipeBox.innerHTML = filter(data.hits);
+        recipeBox.innerHTML = getRecipes(data.hits);
+        filterAll.classList.remove("filterBtn");
+        filterAll.classList.add("active");
+        filterBreakfast.classList.add("filterBtn");
+        filterLunchDinner.classList.add("filterBtn");
+        filterSnack.classList.add("filterBtn");
       });
 
       filterBreakfast.addEventListener('click', (event) => {
         recipeBox.innerHTML = filter(data.hits, 'breakfast');
+        filterBreakfast.classList.remove("filterBtn");
+        filterBreakfast.classList.add("active");
+        filterAll.classList.add("filterBtn");
+        filterLunchDinner.classList.add("filterBtn");
+        filterSnack.classList.add("filterBtn");
       });
 
       filterLunchDinner.addEventListener('click', (event) => {
         recipeBox.innerHTML = filter(data.hits, 'lunch/dinner');
+        filterLunchDinner.classList.remove("filterBtn");
+        filterLunchDinner.classList.add("active");
+        filterBreakfast.classList.add("filterBtn");
+        filterAll.classList.add("filterBtn");
+        filterSnack.classList.add("filterBtn");
       });
 
       filterSnack.addEventListener('click', (event) => {
         recipeBox.innerHTML = filter(data.hits, 'snack');
+        filterSnack.classList.remove("filterBtn");
+        filterSnack.classList.add("active");
+        filterBreakfast.classList.add("filterBtn");
+        filterLunchDinner.classList.add("filterBtn");
+        filterAll.classList.add("filterBtn");
       });
 
     } else if (search === "") {
@@ -134,6 +147,16 @@ const getRecipes = (results) => {
 
   return recipes; 
 };
+
+/*
+function filterStyle(mealtype) {
+  mealtype.classList.remove("filterBtn");
+  filterAll.classList.add("active");
+  filterBreakfast.classList.add("filterBtn");
+  filterLunchDinner.classList.add("filterBtn");
+  filterSnack.classList.add("filterBtn");
+}
+*/
 
 /**
  * This function get recipes array of objects based on mealtype
