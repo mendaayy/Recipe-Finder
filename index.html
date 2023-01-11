@@ -12,17 +12,17 @@
 		  	<!-- direct back to homepage -->
 		    <a href="index.html"><h1>Recipes Finder</h1></a>
 		    
-		    <form  autocomplete="off">
+		    <form autocomplete="off">
 		      <input type="text" id="input" placeholder="Find your recipe">
 		      <!-- search icon -->
 		      <button><i class="fa fa-search" id="btn" style="font-size: 2.5em;"></i></button>
 		    </form>
 
 		    <div class="filterButtons">
-		    	<button class="filterBtn active" id="filter-all">All</button>
-		    	<button class="filterBtn" id="filter-breakfast">Breakfast</button>
-		    	<button class="filterBtn" id="filter-lunchDinner">Lunch/Dinner</button>
-		    	<button class="filterBtn" id="filter-snack">Snack</button>
+		    	<button class="filterBtn active" value="">All</button>
+		    	<button class="filterBtn" value="breakfast">Breakfast</button>
+		    	<button class="filterBtn" value="lunch/dinner">Lunch/Dinner</button>
+		    	<button class="filterBtn" value="snack">Snack</button>
 		    </div>
 		    
 		    <!-- json data -->
@@ -32,7 +32,8 @@
 		</div>
 	</section>
 
-	<script src="script.js"></script>
+	<script type="module" src="js/search.js"></script>
+	<script type="module" src="js/filter.js"></script>
 
 </body>
 </html>
