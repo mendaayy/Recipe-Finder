@@ -24,8 +24,13 @@ I first researched about API's and look at what API's are out there. I found the
 
 <img width="1110" alt="Screenshot 2023-05-18 at 10 45 11" src="https://github.com/mendaayy/Recipe-Finder/assets/122844229/08d92441-4909-4f03-a8cd-1f83ada626d5">
 
-**Prototype**
+## UI
 
-<img width="1506" alt="Screenshot 2023-05-18 at 09 54 32" src="https://github.com/mendaayy/Recipe-Finder/assets/122844229/838efb2c-fe0c-4703-9a1a-65f9e57ac163">
-<img width="1506" alt="Screenshot 2023-05-18 at 09 54 08" src="https://github.com/mendaayy/Recipe-Finder/assets/122844229/9ba308f8-d7c1-42be-9871-7e60c47ec40a">
+<img width="1000" alt="Screenshot 2023-05-18 at 09 54 32" src="https://github.com/mendaayy/Recipe-Finder/assets/122844229/838efb2c-fe0c-4703-9a1a-65f9e57ac163">
+<img width="1000" alt="Screenshot 2023-05-18 at 09 54 08" src="https://github.com/mendaayy/Recipe-Finder/assets/122844229/9ba308f8-d7c1-42be-9871-7e60c47ec40a">
+
+
+
+Mobile version:
+
 <img width="390" alt="Screenshot 2023-05-18 at 09 52 22" src="https://github.com/mendaayy/Recipe-Finder/assets/122844229/87371c78-4ac2-40ac-b093-30c4b6184266">
