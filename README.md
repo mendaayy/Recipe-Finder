@@ -30,4 +30,5 @@ I first researched about API's and look at what API's are out there. I found the
 
 Mobile version:
 
-<img width="390" alt="Screenshot 2023-05-18 at 09 52 22" src="https://github.com/mendaayy/Recipe-Finder/assets/122844229/87371c78-4ac2-40ac-b093-30c4b6184266">
+<img width="321" alt="Screenshot 2023-05-20 at 19 20 35" src="https://github.com/mendaayy/Recipe-Finder/assets/122844229/061196bc-aadd-46ac-b17a-7f596721d275">
+
