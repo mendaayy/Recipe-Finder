@@ -4,7 +4,7 @@
 
 ## Introduction
 
-For a school assignment, I needed to create a fully responsive website that incorporates the use of an API and SCSS. This was my first time ever coding with API, so I learned a lot and managed to do a Recipe Finder website.
+I wanted to create a fully responsive website that incorporates the use of an API and SCSS. This was my first time ever coding with API, so I learned a lot and managed to do a Recipe Finder website.
 
 With my website, you can find recipes by searching up an ingredient or a dish. You can also filter out what meal you want to get recipes for, such as breakfast, lunch, dinner and snacks. Each recipe also shows you the total calories and other nutrional value. Lastly, when you click on a recipe, it will redirect you to an external site for the recipe.
 
